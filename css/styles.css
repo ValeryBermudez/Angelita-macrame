@@ -1,0 +1,224 @@
+/*Body*/
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #DDCFB9;
+    overflow-y: auto;
+    height: 100vh; /* Ajustamos la altura del body al 100% de la altura de la ventana */
+    padding: 0; /* Eliminamos cualquier relleno */
+}
+/*----------------------------------------------------------------------------------------*/
+/*Header*/
+.h1{
+   color: #60410f;
+   font-size: medium;
+   text-align: right;
+}
+.menu {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #DDCFB9;
+    color: #856430;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-width: 150px; /* Limita el ancho máximo del logo */
+    height: auto;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #856430;
+    padding: 10px;
+    margin: 35px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        background-color: #DDCFB9;
+        padding: 10px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        overflow-y: auto; /* Agrega scroll si el menú es muy largo */
+        transition: left 0.9s ease; /* Transición de deslizamiento */
+
+    }
+    .menu-item {
+        text-decoration: none;
+        color: #856430;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s; /* Añadimos una transición suave al cambiar el color de fondo */
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #856430;
+        font-size: 1.5em;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1000; /* Asegura que el botón esté por encima del menú */
+    }
+
+    .menu-items.show-menu {
+        display: flex;
+        left: 0;
+    }
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*Footer*/
+.menu-footer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #DDCFB9;
+    color: #856430;
+    padding: 10px 20px;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .menu-footer {
+        text-decoration: none;
+        color: #856430;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s; /* Añadimos una transición suave al cambiar el color de fondo */
+    }
+
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*index*/
+/* Estilos para el contenedor principal */
+.content-wrapper{
+    align-items: center;
+}
+.content-wrapper img {
+    width: 20%; /* Ancho del 50% para la imagen en la versión de escritorio */
+    height: auto; /* Altura automática */
+    border-radius: 10px; /* Borde redondeado */
+    margin-bottom: 20px; /* Margen inferior */
+    margin-left: 15%; /* Margen derecho */
+    align-items: center;
+}
+
+/* Estilos para el párrafo en la versión de escritorio */
+.content-wrapper p {
+    width: 70%; /* Ancho del 40% para el párrafo en la versión de escritorio */
+    text-align: justify;
+    margin-bottom: 20px; /* Margen inferior */
+    margin-left: 15%; /* Margen izquierdo */
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    /* Estilos para dispositivos móviles */
+
+    /* Estilos para el párrafo */
+    .content-wrapper p {
+        width: 100%; /* Ancho del 90% para el párrafo en dispositivos móviles */
+        text-align: justify;
+        margin-bottom: 10px;
+        margin-left: 5%; /* Centra el párrafo horizontalmente en dispositivos móviles */
+    }
+    .content-wrapper img {
+        width: 80%; /* Ancho del 50% para la imagen en la versión de escritorio */
+        height: auto; /* Altura automática */
+        border-radius: 10px; /* Borde redondeado */
+        margin-bottom: 20px; /* Margen inferior */
+        margin-left: 15%; /* Margen derecho */
+        align-items: center;
+    }
+}
+/*----------------------------------------------------------------------------------------*/
+/*Products*/
+.contenedor{
+	display: flex; /* Utilizamos flexbox para establecer dos columnas */
+	flex-direction: row;
+	/*flex-grow: 1; /* Por defecto, el elemento ocupa todo el espacio disponible */
+	
+}
+.tarjetas{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+	width: 100%;
+}
+.card{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #856430;
+    text-align: center;
+    width: 200px;
+}
+.card .contenido {
+    color: #60410f;
+	flex: 1; /* La primera columna (contenido) ocupa todo el espacio disponible */
+}
+.card .imagen {
+	flex: auto; /* La segunda columna (imagen) no crece ni se encoge */
+	width: 100%; /* Ancho del 50% para la imagen */
+    max-width: 100%;
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+}
+
+.card h3.macrame {
+    color: #60410f;
+	text-align: center;
+	font-size: 1.5rem; /* Tamaño de fuente para el título */
+	margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.card p.descriptione {
+    color: #60410f;
+	font-size: 1rem; /* Tamaño de fuente para la descripción */
+	margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.card img.macrame {
+	width: 100%; /* La imagen ocupa todo el ancho del div */
+	border-radius: 10px; /* Borde redondeado en las esquinas */
+	margin-bottom: 10px; /* Espaciado inferior */
+  }
+
+/*----------------------------------------------------------------------------------------*/
+/*About*/
+
+
+
+
+/*----------------------------------------------------------------------------------------*/
+/*Contact*/
